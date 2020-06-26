@@ -1,9 +1,9 @@
-function looping() {
+function looping(userInput) {
   numbers = []
-  const userInput =  parseInt($("#number").val());
   for (var i = 0; i <= userInput; i++){
   numbers[i] = i;
   }
+
 for (var i=0; i <= userInput; i++)
   if (numbers[i].toString().includes("3")){
     numbers[i] = "Won't you be my neighbor?";
@@ -18,8 +18,9 @@ for (var i=0; i <= userInput; i++)
 
   $(document).ready(function() {
   $("form#input").submit(function(event){
+    const userInput =  parseInt($("#number").val());
     event.preventDefault();
-    const result = looping()
+    const result = looping(userInput)
     $("input#number").val("");
     $("#display").text(numbers);
     $("#display").show();
